@@ -662,6 +662,7 @@ class AirthingsBluetoothDeviceData:
                 if is_final_attempt:
                     raise
                 self.logger.debug("Bleak error: %s", err)
+        raise RuntimeError("Should not reach this point")
 
     async def _update_device(self, ble_device: BLEDevice) -> AirthingsDevice:
         """Connects to the device through BLE and retrieves relevant data"""
